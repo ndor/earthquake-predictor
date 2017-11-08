@@ -1,0 +1,32 @@
+
+architecture:
+-------------
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         (None, 512)               0         
+_________________________________________________________________
+reshape_1 (Reshape)          (None, 512, 1)            0         
+_________________________________________________________________
+conv1d_1 (Conv1D)            (None, 512, 16)           272       
+_________________________________________________________________
+max_pooling1d_1 (MaxPooling1 (None, 2, 16)             0         
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 32)                0         
+_________________________________________________________________
+country (Dense)              (None, 1)                 33        
+=================================================================
+Total params: 305
+Trainable params: 305
+Non-trainable params: 0
+_________________________________________________________________
+Train on 322 samples, validate on 139 samples
+
+
+
+
+
+@ Epoch 454/1000:
+-----------------
+loss: 0.0956 - acc: 0.8385 - val_loss: 0.4659 - val_acc: 0.8129
+NOTE: the score (loss & acc) is actually higher, since here the scoring incorporates sample weights by frequency in the dataset (i.e. scarse => higher impact)
